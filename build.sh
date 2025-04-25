@@ -144,13 +144,15 @@ Clean_All() {
     rm -rf *
 }
 
-
-BuildOtbr() {
+UpdateRepo() {
     log_yellow "Setup Environment for Thread boader router" 
     # may need to run mannually due to sudo
     # refer to: https://openthread.io/codelabs/openthread-border-router#1
     ./script/bootstrap
     INFRA_IF_NAME=wlan0 ./script/setup
+}
+
+BuildOtbr() {
     log_yellow "Building Thread boader router"
     ./script/cmake-build -DOTBR_BORDER_ROUTING=ON -DOTBR_REST=ON \
                          -DOTBR_BACKBONE_ROUTER=ON \
@@ -171,6 +173,7 @@ BuildOtbr() {
 # Main script logic
 
 if [ $RUN_CONTAINER == 1 ]; then
+    UpdateRepo
     log_prompt "Running build script for platform = $HW_PL .................."
     BUILD_DOCKER_IMAGE=$BUILD_DOCKER_IMAGE_IMX9
     RunContainer "$@"
