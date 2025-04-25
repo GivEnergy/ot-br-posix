@@ -30,7 +30,7 @@
 OT_LOG_LEVEL="${OT_LOG_LEVEL:-7}"
 readonly OT_LOG_LEVEL
 
-OT_RCP_DEVICE="${OT_RCP_DEVICE:-spinel+hdlc+uart:///dev/ttyACM0?uart-baudrate=1000000}"
+OT_RCP_DEVICE="${OT_RCP_DEVICE:-spinel+hdlc+uart:///dev/ttyLP7?uart-baudrate=1000000}"
 readonly OT_RCP_DEVICE
 
 OT_INFRA_IF="${OT_INFRA_IF:-wlan0}"

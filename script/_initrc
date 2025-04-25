@@ -129,12 +129,14 @@ if [[ ! ${PLATFORM+x} ]]; then
                 PLATFORM=macOS
                 ;;
             *)
-                have_or_die lsb_release
-                PLATFORM=$(lsb_release -i | cut -c17- | tr '[:upper:]' '[:lower:]')
+#                have_or_die lsb_release
+#                PLATFORM=$(lsb_release -i | cut -c17- | tr '[:upper:]' '[:lower:]')
                 ;;
         esac
     fi
 fi
+PLATFORM=ubuntu
+
 echo "Current platform is $PLATFORM"
 
 # The DHCPV6_PD feature requires IPv6 features in dhcpcd but RIO
