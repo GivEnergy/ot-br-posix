@@ -26,7 +26,7 @@
 #  POSSIBILITY OF SUCH DAMAGE.
 #
 
-#pkg_check_modules(JSONCPP jsoncpp REQUIRED)
+pkg_check_modules(JSONCPP jsoncpp REQUIRED)
 set(OTBR_WEB_DATADIR ${CMAKE_INSTALL_FULL_DATADIR}/otbr-web)
 
 add_executable(otbr-web

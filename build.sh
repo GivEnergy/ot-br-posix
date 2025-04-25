@@ -79,7 +79,7 @@ Help() {
 }
 
 # Parse command-line options
-while getopts "hac:p:n" arg; do
+while getopts "hacn" arg; do
     case $arg in
         h)
             Help
